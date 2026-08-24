@@ -1,0 +1,21 @@
+{
+	"modListVersion": 2,
+	"modList": [{
+		"modid": "${modId}",
+		"name": "${modName}",
+		"description": "裂变进化为 GregTech: New Horizons 带来九种高功率核燃料棒、7x7x7 大型裂变反应堆，以及独立的 48x48x32 终极宇宙毁灭发电机。简单直接地投入燃料、升级结构并输出巨量 EU。 / Fission Evolved adds nine high-output nuclear fuel rods, a 7x7x7 Large Fission Reactor, and a separate 48x48x32 Ultimate Universe-Destroying Generator for direct, extreme-scale EU generation.",
+		"version": "${modVersion}",
+		"mcversion": "${minecraftVersion}",
+		"url": "https://github.com/shenFNX/Fission-Evolved",
+		"updateUrl": "",
+		"authorList": ["Shen FNX"],
+		"credits": "Built for the GregTech: New Horizons community.",
+		"logoFile": "assets/fissionevolved/icon.png",
+		"screenshots": [],
+		"parent": "",
+		"requiredMods": ["gregtech"],
+		"dependencies": [],
+		"dependants": [],
+		"useDependencyInformation": true
+	}]
+}
