@@ -677,8 +677,13 @@ public class MTEFissionReactor extends MTEExtendedPowerMultiBlockBase<MTEFission
         return wirelessEnabled;
     }
 
-    public void setWirelessEnabled(boolean enabled) {
+    /** Sets the stored wireless mode without touching a structure that may not be attached to the world yet. */
+    protected final void setWirelessEnabledSilently(boolean enabled) {
         wirelessEnabled = enabled;
+    }
+
+    public void setWirelessEnabled(boolean enabled) {
+        setWirelessEnabledSilently(enabled);
         if (enabled) {
             ensureWirelessOwner();
         }

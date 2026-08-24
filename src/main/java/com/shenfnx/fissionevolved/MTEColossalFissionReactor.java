@@ -73,13 +73,13 @@ public final class MTEColossalFissionReactor extends MTEFissionReactor {
 
     public MTEColossalFissionReactor(int id, String name, String regionalName) {
         super(id, name, regionalName);
-        super.setWirelessEnabled(true);
+        setWirelessEnabledSilently(true);
         coilLevel = HeatingCoilLevel.None;
     }
 
     private MTEColossalFissionReactor(String name) {
         super(name);
-        super.setWirelessEnabled(true);
+        setWirelessEnabledSilently(true);
         coilLevel = HeatingCoilLevel.None;
     }
 
@@ -279,7 +279,7 @@ public final class MTEColossalFissionReactor extends MTEFissionReactor {
 
     @Override
     public void setWirelessEnabled(boolean enabled) {
-        super.setWirelessEnabled(true);
+        setWirelessEnabledSilently(true);
     }
 
     @Override
@@ -388,7 +388,7 @@ public final class MTEColossalFissionReactor extends MTEFissionReactor {
     @Override
     public void loadNBTData(NBTTagCompound tag) {
         super.loadNBTData(tag);
-        super.setWirelessEnabled(true);
+        setWirelessEnabledSilently(true);
         coilLevel = HeatingCoilLevel.None;
         int storedFieldTier = tag.hasKey("FissionColossalFieldTier") ? tag.getInteger("FissionColossalFieldTier")
             : casingTier == 2 ? 3 : casingTier == 5 ? 6 : casingTier == 7 ? 9 : UNSET_TIER;
