@@ -42,13 +42,17 @@ dependencies {
     runtimeOnlyNonPublishable("com.github.GTNewHorizons:TX-Loader:1.8.11:dev")
 
     // Optional-addon integration jars are local developer fixtures. A clean public checkout does not need them.
-    def tstDevJar = file("libs/dev-runtime/TwistSpaceTechnology-0.8.0-beta1.1-gtnh29-dev.jar")
-    if (tstDevJar.exists()) {
+    def tstDevJar = fileTree("libs/dev-runtime") {
+        include "TwistSpaceTechnology-*-gtnh29-dev.jar"
+    }.files.find()
+    if (tstDevJar != null) {
         runtimeOnlyNonPublishable(files(tstDevJar))
     }
 
-    def gtnlDevJar = file("libs/dev-runtime/sciencenotleisure-0.2.7-pre1-gtnh29-dev.jar")
-    if (gtnlDevJar.exists()) {
+    def gtnlDevJar = fileTree("libs/dev-runtime") {
+        include "sciencenotleisure-*-gtnh29-dev.jar"
+    }.files.find()
+    if (gtnlDevJar != null) {
         runtimeOnlyNonPublishable(files(gtnlDevJar))
 
         // GTNL declares these mods as runtime dependencies and links several of them during proxy construction.
