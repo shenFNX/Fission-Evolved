@@ -64,6 +64,7 @@
 
 - 在 NEI 搜索“裂变进化”或 `Fission Evolved` 可找到全部物品和控制器。
 - 右击燃料棒可查看反应堆配方、基础功率、工作时间与直接回收结果。
+- 九种自定义燃料棒及其枯竭版本均带有独立的彩色风味文本。
 - 按住控制器的 `LSHIFT` 查看完整结构说明，或使用多方块全息投影仪自动摆放。
 - 控制器 GUI 显示当前燃料、剩余时间、实际/最大并行、实时功率、预计总发电、缓存电量、输出目标和暂停原因。
 - 运行中主动停机或拆除结构会损失本轮已经投入的燃料和待产物。
@@ -116,6 +117,7 @@
 - Tier 3/6/9 field structures give ×1/×5/×10 final output. Maximum parallel is fixed at 1,048,576.
 - Ultimate cycles last one hour. With TST installed, a non-consumed Proof of Heroes in the controller extends a cycle to 24 hours.
 - Every custom depleted-rod centrifuge recipe has deterministic item and fluid outputs. There are no recovery chances.
+- Every custom fuel rod and depleted counterpart has unique colored flavor text.
 - NEI documents fuels, output, duration, recovery, structures, and all scaling rules.
 
 ### Requirements

@@ -14,6 +14,7 @@ import gregtech.api.items.ItemRadioactiveCellIC;
 public final class SuperFuelRodItem extends ItemRadioactiveCellIC {
 
     private final String displayNameKey;
+    private final String loreKeyBase;
     private final String textureName;
     private IIcon icon;
 
@@ -31,6 +32,7 @@ public final class SuperFuelRodItem extends ItemRadioactiveCellIC {
             baseRod.sMox,
             baseRod.sHeatBonus);
         this.displayNameKey = "item." + FissionEvolved.MOD_ID + "." + registryName + ".name";
+        this.loreKeyBase = "item." + FissionEvolved.MOD_ID + "." + registryName + ".lore";
         this.textureName = textureName;
         setCreativeTab(SuperFuelRods.TAB);
     }
@@ -59,5 +61,14 @@ public final class SuperFuelRodItem extends ItemRadioactiveCellIC {
     public void addInformation(ItemStack stack, EntityPlayer player, List<String> tooltip, boolean advanced) {
         super.addInformation(stack, player, tooltip, advanced);
         tooltip.add(StatCollector.translateToLocalFormatted("fissionevolved.tooltip.output", sEnergy));
+        tooltip.add("");
+        addTranslatedLore(tooltip, loreKeyBase + ".1");
+        addTranslatedLore(tooltip, loreKeyBase + ".2");
+    }
+
+    private static void addTranslatedLore(List<String> tooltip, String key) {
+        if (StatCollector.canTranslate(key)) {
+            tooltip.add(StatCollector.translateToLocal(key));
+        }
     }
 }

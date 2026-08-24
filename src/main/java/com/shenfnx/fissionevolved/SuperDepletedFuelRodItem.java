@@ -15,11 +15,13 @@ import ic2.api.item.IBoxable;
 public final class SuperDepletedFuelRodItem extends Item implements IBoxable {
 
     private final String displayNameKey;
+    private final String loreKey;
     private final String textureName;
     private IIcon icon;
 
     public SuperDepletedFuelRodItem(String registryName, String textureName) {
         this.displayNameKey = "item." + FissionEvolved.MOD_ID + "." + registryName + ".name";
+        this.loreKey = "item." + FissionEvolved.MOD_ID + "." + registryName + ".lore";
         this.textureName = resolveTextureName(textureName);
 
         setUnlocalizedName(FissionEvolved.MOD_ID + "." + registryName);
@@ -57,7 +59,11 @@ public final class SuperDepletedFuelRodItem extends Item implements IBoxable {
     }
 
     @Override
-    public void addInformation(ItemStack stack, EntityPlayer player, List<String> tooltip, boolean advanced) {}
+    public void addInformation(ItemStack stack, EntityPlayer player, List<String> tooltip, boolean advanced) {
+        if (StatCollector.canTranslate(loreKey)) {
+            tooltip.add(StatCollector.translateToLocal(loreKey));
+        }
+    }
 
     private static String resolveTextureName(String textureName) {
         return textureName.indexOf(':') >= 0 ? textureName : "gregtech:gt." + textureName;
