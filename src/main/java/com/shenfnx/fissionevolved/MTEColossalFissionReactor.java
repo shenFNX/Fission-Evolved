@@ -373,10 +373,13 @@ public final class MTEColossalFissionReactor extends MTEFissionReactor {
             .addSubChannel(GTStructureChannels.EOH_STABILISATION)
             .addSubChannel(GTStructureChannels.EOH_DILATION)
             .addSubChannel(GTStructureChannels.BOROGLASS)
-            .toolTipFinisher(
-                EnumChatFormatting.GRAY,
-                41,
-                EnumChatFormatting.GOLD + tr("fissionevolved.mod_name") + EnumChatFormatting.RESET);
+            /*
+             * .toolTipFinisher(
+             * EnumChatFormatting.GRAY,
+             * 41,
+             * EnumChatFormatting.GOLD + tr("fissionevolved.mod_name") + EnumChatFormatting.RESET)
+             */
+            .toolTipFinisher(EnumChatFormatting.GOLD + tr("fissionevolved.mod_name") + EnumChatFormatting.RESET);
     }
 
     @Override
