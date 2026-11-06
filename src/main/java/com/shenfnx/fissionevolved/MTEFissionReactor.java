@@ -847,10 +847,13 @@ public class MTEFissionReactor extends MTEExtendedPowerMultiBlockBase<MTEFission
             .addSubChannel(GTStructureChannels.METAL_MACHINE_CASING)
             .addSubChannel(GTStructureChannels.HEATING_COIL)
             .addSubChannel(GTStructureChannels.BOROGLASS)
-            .toolTipFinisher(
-                EnumChatFormatting.GRAY,
-                41,
-                EnumChatFormatting.GOLD + tr("fissionevolved.mod_name") + EnumChatFormatting.RESET);
+            /*
+             * .toolTipFinisher(
+             * EnumChatFormatting.GRAY,
+             * 41,
+             * EnumChatFormatting.GOLD + tr("fissionevolved.mod_name") + EnumChatFormatting.RESET);
+             */
+            .toolTipFinisher(EnumChatFormatting.GOLD + tr("fissionevolved.mod_name") + EnumChatFormatting.RESET);
     }
 
     protected static String tr(String key) {
